@@ -460,7 +460,7 @@
       <article class="alum">
         ${img(a.photo, a.name, "photo", "사진")}
         <div class="alum-main"><b>${esc(a.name)}</b>${a.degree ? `<span>${esc(a.degree)}</span>` : ""}${a.period ? `<span class="period">${esc(a.period)}</span>` : ""}</div>
-        <dl>${a.company ? `<dt>현 소속</dt><dd class="strong">${a.logo ? `<img class="alum-logo" src="${esc(a.logo)}" alt="" aria-hidden="true">` : ""}<span>${esc(a.company)}</span></dd>` : ""}${row("연구 분야", a.topic)}${row("현재 업무", a.job)}</dl>
+        <dl>${a.company ? `<dt>현 소속</dt><dd class="strong">${a.logo ? `<img class="alum-ci" src="${esc(a.logo)}" alt="${esc(a.company)}" title="${esc(a.company)}">` : `<span>${esc(a.company)}</span>`}</dd>` : ""}${row("연구 분야", a.topic)}${row("현재 업무", a.job)}</dl>
       </article>`).join("");
   }
 
