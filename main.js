@@ -459,7 +459,7 @@
     $("alumniList").innerHTML = (SITE.alumniNote ? `<p class="alum-note">${esc(SITE.alumniNote)}</p>` : "") + SITE.alumni.map((a) => `
       <article class="alum">
         ${img(a.photo, a.name, "photo", "사진")}
-        <div class="alum-main"><b>${esc(a.name)}</b>${a.degree ? `<span>${esc(a.degree)}</span>` : ""}${a.period ? `<span class="period">${esc(a.period)}</span>` : ""}</div>
+        <div class="alum-main"><b>${esc(a.name)}</b>${(a.degrees || [a]).map((d) => (d.degree ? `<span>${esc(d.degree)}</span>` : "") + (d.period ? `<span class="period">${esc(d.period)}</span>` : "")).join("")}</div>
         <dl>${a.company ? `<dt>현 소속</dt><dd class="strong">${a.logo ? `<img class="alum-ci" src="${esc(a.logo)}" alt="${esc(a.company)}" title="${esc(a.company)}">` : `<span>${esc(a.company)}</span>`}</dd>` : ""}${row("연구 분야", a.topic)}${row("현재 업무", a.job)}</dl>
       </article>`).join("");
   }

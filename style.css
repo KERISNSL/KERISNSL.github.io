@@ -479,6 +479,7 @@ body[data-page="contact"] .footer-cta { display: none; }
 .alum-main b { display: block; font-size: 1.15rem; }
 .alum-main span { display: block; color: var(--blue); font-size: .88rem; font-weight: 500; }
 .alum-main span.period { color: var(--muted); font-weight: 400; }
+.alum-main .period + span { margin-top: 6px; }   /* 학위가 둘 이상일 때 묶음 사이 간격 */
 .alum dl { display: grid; grid-template-columns: 76px 1fr; gap: 4px 14px; margin: 0; padding-left: 22px; border-left: 1px solid var(--line); font-size: .92rem; }
 .alum dt { color: var(--muted); }
 .alum dd { margin: 0; }
@@ -624,7 +625,7 @@ body[data-page="contact"] .footer-cta { display: none; }
 }
 /* ---------- 졸업생: 모바일에서도 이름 바로 옆에 현 소속이 오도록 ---------- */
 @media (max-width: 760px) {
-  .alum { grid-template-columns: 52px 98px minmax(0, 1fr); gap: 12px; padding: 16px 4px; }   /* 이름 칸 폭을 고정해 세로선이 줄마다 같은 자리에 오게 함 */
+  .alum { grid-template-columns: 52px 104px minmax(0, 1fr); gap: 12px; padding: 16px 4px; }   /* 이름 칸 폭을 고정해 세로선이 줄마다 같은 자리에 오게 함 */
   .alum-main span.period { font-size: .74rem; }
   .alum .photo { width: 52px; height: 52px; }
   .alum-main b { font-size: 1.05rem; white-space: nowrap; }
