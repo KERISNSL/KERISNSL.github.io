@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications | KERI SNSL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Play:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="publications" data-title="Publications" data-sub="논문 · 특허 · 학회발표">
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="pub-tools">
+        <div class="tabs" id="pubTabs" role="tablist"></div>
+        <div class="pub-filters">
+          <select id="pubYear" aria-label="연도"></select>
+          <input id="pubSearch" type="search" placeholder="제목 · 저자 검색" aria-label="검색">
+        </div>
+      </div>
+      <div id="pubList"></div>
+    </div>
+  </section>
+</main>
+<script src="publications.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
