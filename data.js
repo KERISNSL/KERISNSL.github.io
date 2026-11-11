@@ -259,11 +259,11 @@ const SITE = {
   alumniNote: "졸업생들은 배터리 소재 · 셀 · 완성차 등 이차전지 분야 주요 기업으로 진출했습니다.",
   alumni: [
     { name: "박재영", degree: "석사 졸업", period: "", topic: "", company: "엘앤에프", logo: "images/logos/lnf-ci.png", job: "", photo: "images/people/park-jaeyoung.jpg" },
-    { name: "김민주", degree: "석사 졸업", period: "", topic: "", company: "롯데에너지머티리얼즈", logo: "images/logos/lotte-em.png", job: "", photo: "images/people/kim-minju.jpg" },
-    { name: "조성찬", degree: "석사 졸업", period: "", topic: "", company: "LG에너지솔루션", logo: "images/logos/lg-es.svg", job: "", photo: "images/people/cho-seongchan.jpg" },
-    { name: "최익현", degree: "석사 졸업", period: "", topic: "", company: "현대자동차", logo: "images/logos/hyundai-motor.svg", job: "", photo: "images/people/choi-ikhyeon.jpg" },
-    { name: "조영수", degree: "석사 졸업", period: "2022.03~2024.02", topic: "", company: "LG에너지솔루션", logo: "images/logos/lg-es.svg", job: "", photo: "images/people/cho-youngsu.jpg" },
+    { name: "김민주", degree: "석사 졸업", period: "2018.09~2020.09", topic: "", company: "롯데에너지머티리얼즈", logo: "images/logos/lotte-em.png", job: "", photo: "images/people/kim-minju.jpg" },
+    { name: "조성찬", degree: "석사 졸업", period: "2019.09~2021.06", topic: "", company: "LG에너지솔루션", logo: "images/logos/lg-es.svg", job: "", photo: "images/people/cho-seongchan.jpg" },
+    { name: "최익현", degree: "석사 졸업", period: "2020.03~2022.02", topic: "", company: "현대자동차", logo: "images/logos/hyundai-motor.svg", job: "", photo: "images/people/choi-ikhyeon.jpg" },
     { name: "홍정원", degree: "석사 졸업", period: "2021.09~2023.06", topic: "", company: "LG화학", logo: "images/logos/lg-chem.svg", job: "", photo: "images/people/hong-jeongwon.jpg" },
+    { name: "조영수", degree: "석사 졸업", period: "2022.03~2024.02", topic: "", company: "LG에너지솔루션", logo: "images/logos/lg-es.svg", job: "", photo: "images/people/cho-youngsu.jpg" },
     { name: "성정환", degree: "박사 졸업", period: "", topic: "", company: "SK On", logo: "images/logos/sk-on.png", job: "", photo: "images/people/seong-jeonghwan.jpg" },
   ],
 
