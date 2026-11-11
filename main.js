@@ -25,9 +25,9 @@
   ];
   const menuHtml = MENU.map(([k, label, href, sub]) => {
     const active = k === page || (sub && sub.some((s) => s[0] === page));
-    const top = `<a href="${href}" class="${active ? "active" : ""}">${label}</a>`;
+    const top = `<a href="${href}" class="${active ? "active" : ""}"${sub ? ` aria-expanded="${active}"` : ""}>${label}${sub ? `<i class="chev" aria-hidden="true"></i>` : ""}</a>`;
     if (!sub) return top;
-    return `<div class="nav-item">${top}<div class="sub">${sub.map((s) => `<a href="${s[2]}" class="${s[0] === page ? "on" : ""}">${s[1]}</a>`).join("")}</div></div>`;
+    return `<div class="nav-item ${active ? "open" : ""}">${top}<div class="sub">${sub.map((s) => `<a href="${s[2]}" class="${s[0] === page ? "on" : ""}">${s[1]}</a>`).join("")}</div></div>`;
   }).join("");
 
   /* ---------- SNSL 심볼 ----------
@@ -195,6 +195,13 @@
     $("navToggle").setAttribute("aria-expanded", open);
     onScroll();
   };
+  /* 모바일 메뉴: People 처럼 하위 메뉴가 있는 항목은 누르면 아래로 펼쳐지고, 다시 누르면 접힙니다 (PC 에서는 마우스를 올리면 나옵니다) */
+  const mobileNav = matchMedia("(max-width: 980px)");
+  document.querySelectorAll(".nav-item > a").forEach((a) => a.addEventListener("click", (e) => {
+    if (!mobileNav.matches) return;
+    e.preventDefault();
+    a.setAttribute("aria-expanded", a.parentElement.classList.toggle("open"));
+  }));
   $("toTop").onclick = (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); };
   onScroll();
 
@@ -241,7 +248,7 @@
     $("heroSlides").innerHTML = SITE.hero.map((s, i) => `
       <div class="hero-slide ${s.image ? "" : "empty"}">
         <div class="hero-bg" ${s.image ? `style="background-image:url('${esc(s.image)}')"` : ""}></div>
-        ${s.image ? "" : BATTERY + `<span class="hero-note">배너 사진 자리 ${i + 1}</span>`}
+        ${s.image ? "" : BATTERY}
         <div class="hero-body">
           <span class="hero-tag">${esc(s.tag)}</span>
           <div class="hero-title"><h1>${boldCaps(s.title)}</h1><span class="stripes" aria-hidden="true"><i></i><i></i><i></i></span></div>
@@ -404,7 +411,7 @@
       ${img(pi.photo, pi.name, "photo", "사진 자리")}
       <div>
         <span class="pill">Principal Investigator</span>
-        <h3>${esc(pi.name)} 박사</h3>
+        <h3>${esc(pi.name)} 교수</h3>
         <p class="en">${esc(pi.nameEn)}</p>
         <p class="role">${esc(pi.role)}${pi.role2 ? `<br>${esc(pi.role2)}` : ""}</p>
         <dl class="pi-info">
@@ -452,7 +459,7 @@
     $("alumniList").innerHTML = (SITE.alumniNote ? `<p class="alum-note">${esc(SITE.alumniNote)}</p>` : "") + SITE.alumni.map((a) => `
       <article class="alum">
         ${img(a.photo, a.name, "photo", "사진")}
-        <div class="alum-main"><b>${esc(a.name)}</b><span>${esc(a.degree)}</span></div>
+        <div class="alum-main"><b>${esc(a.name)}</b>${a.degree ? `<span>${esc(a.degree)}</span>` : ""}${a.period ? `<span class="period">${esc(a.period)}</span>` : ""}</div>
         <dl>${a.company ? `<dt>현 소속</dt><dd class="strong">${a.logo ? `<img class="alum-logo" src="${esc(a.logo)}" alt="" aria-hidden="true">` : ""}<span>${esc(a.company)}</span></dd>` : ""}${row("연구 분야", a.topic)}${row("현재 업무", a.job)}</dl>
       </article>`).join("");
   }

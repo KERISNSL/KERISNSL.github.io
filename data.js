@@ -218,14 +218,14 @@ const SITE = {
         {
           name: "구하원", role: "석사후연구원", email: "", photo: "images/people/koo-hawon.jpg",
           skills: ["황 양극 소재 분석 · 고로딩 전극 제작 기술", "고에너지밀도 전지 프로토타입 파우치 제작 기술"],
-          metrics: "",
+          metrics: "SCI(E) 논문 7편 · 특허 7건",
           edu: ["가천대학교 신소재공학과 학사 (2020~2024)", "UST 전기기능소재공학 석사 (2024~2026)", "한국전기연구원 차세대전지연구센터 (2026~현재)"],
           awards: ["석사우수장학생(이공계) 선정 (2025)", "한국산업기술진흥협회 회장상 (2026)", "경상남도지사상 (2026)"],
         },
         {
           name: "김주현", role: "석사후연구원", email: "", photo: "images/people/kim-juhyeon.jpg",
           skills: ["리튬-황 전고체전지용 건식 양극 제조 기술", "리튬-황 전지용 황 · SPAN · Li2S 양극 설계"],
-          metrics: "",
+          metrics: "SCI(E) 논문 1편 (공동 1저자 1편) · 특허 출원 6건",
           edu: ["경상대학교 나노·신소재공학부 학사 (2019~2023)", "경상대학교 나노신소재융합공학과 석사 (2023~2025)", "한국전기연구원 차세대전지연구센터 (2026~현재)"],
           awards: ["BK21 GNU 사업단 펠로우십 장학금 우수자 (2024)", "한국전기화학회 부울경 지부 우수논문상 (2025)", "한국전기화학회 우수 논문 발표상 (2025)"],
         },
@@ -253,18 +253,18 @@ const SITE = {
   ],
 
   /* ---------- 졸업생 (Alumni 페이지) ----------
-     degree: 과정과 졸업 연도 / topic: 연구실에서 한 연구 분야
+     degree: 학위 (예: "석사 졸업") / period: 재학 기간 (예: "2022.03~2024.02") / topic: 연구실에서 한 연구 분야
      company: 현재 소속(취업한 곳) / job: 현재 하는 일
      logo: 회사 로고 그림. 회사 이름 뒤에 흐리게 깔립니다. 없으면 "" */
   alumniNote: "졸업생들은 배터리 소재 · 셀 · 완성차 등 이차전지 분야 주요 기업으로 진출했습니다.",
   alumni: [
-    { name: "박재영", degree: "학연생", topic: "", company: "엘앤에프", logo: "images/logos/lnf.png", job: "", photo: "images/people/park-jaeyoung.jpg" },
-    { name: "김민주", degree: "학연생", topic: "", company: "롯데에너지머티리얼즈", logo: "images/logos/lotte.png", job: "", photo: "images/people/kim-minju.jpg" },
-    { name: "조성찬", degree: "학연생", topic: "", company: "LG에너지솔루션", logo: "images/logos/lg.png", job: "", photo: "images/people/cho-seongchan.jpg" },
-    { name: "최익현", degree: "학연생", topic: "", company: "현대자동차", logo: "images/logos/hyundai.png", job: "", photo: "images/people/choi-ikhyeon.jpg" },
-    { name: "조영수", degree: "학연생", topic: "", company: "LG에너지솔루션", logo: "images/logos/lg.png", job: "", photo: "images/people/cho-youngsu.jpg" },
-    { name: "홍정원", degree: "학연생", topic: "", company: "LG화학", logo: "images/logos/lg.png", job: "", photo: "images/people/hong-jeongwon.jpg" },
-    { name: "성정환", degree: "UST", topic: "", company: "SK On", logo: "images/logos/sk.png", job: "", photo: "images/people/seong-jeonghwan.jpg" },
+    { name: "박재영", degree: "석사 졸업", period: "", topic: "", company: "엘앤에프", logo: "images/logos/lnf.png", job: "", photo: "images/people/park-jaeyoung.jpg" },
+    { name: "김민주", degree: "석사 졸업", period: "", topic: "", company: "롯데에너지머티리얼즈", logo: "images/logos/lotte.png", job: "", photo: "images/people/kim-minju.jpg" },
+    { name: "조성찬", degree: "석사 졸업", period: "", topic: "", company: "LG에너지솔루션", logo: "images/logos/lg.png", job: "", photo: "images/people/cho-seongchan.jpg" },
+    { name: "최익현", degree: "석사 졸업", period: "", topic: "", company: "현대자동차", logo: "images/logos/hyundai.png", job: "", photo: "images/people/choi-ikhyeon.jpg" },
+    { name: "조영수", degree: "석사 졸업", period: "2022.03~2024.02", topic: "", company: "LG에너지솔루션", logo: "images/logos/lg.png", job: "", photo: "images/people/cho-youngsu.jpg" },
+    { name: "홍정원", degree: "석사 졸업", period: "2021.09~2023.06", topic: "", company: "LG화학", logo: "images/logos/lg.png", job: "", photo: "images/people/hong-jeongwon.jpg" },
+    { name: "성정환", degree: "박사 졸업", period: "", topic: "", company: "SK On", logo: "images/logos/sk.png", job: "", photo: "images/people/seong-jeonghwan.jpg" },
   ],
 
   /* ---------- 특허 · 학회발표 ----------

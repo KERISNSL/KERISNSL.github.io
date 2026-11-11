@@ -477,7 +477,8 @@ body[data-page="contact"] .footer-cta { display: none; }
 .alum { display: grid; grid-template-columns: 84px 170px 1fr; gap: 22px; align-items: center; padding: 20px 24px; background: #fff; border-radius: 6px; box-shadow: 0 4px 16px rgba(30,40,90,.06); }
 .alum .photo { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; }
 .alum-main b { display: block; font-size: 1.15rem; }
-.alum-main span { color: var(--blue); font-size: .88rem; font-weight: 500; }
+.alum-main span { display: block; color: var(--blue); font-size: .88rem; font-weight: 500; }
+.alum-main span.period { color: var(--muted); font-weight: 400; }
 .alum dl { display: grid; grid-template-columns: 76px 1fr; gap: 4px 14px; margin: 0; padding-left: 22px; border-left: 1px solid var(--line); font-size: .92rem; }
 .alum dt { color: var(--muted); }
 .alum dd { margin: 0; }
@@ -589,4 +590,28 @@ body[data-page="contact"] .footer-cta { display: none; }
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .hero-bg, .hero-slide, .scroll-down span { transition: none; animation: none; }
+}
+
+/* ---------- 모바일 메뉴 (화면 폭 980px 이하) ----------
+   메뉴 버튼을 누르면 위에서 부드럽게 내려오고, People 은 누르면 아래로 펼쳐집니다. */
+.nav-links .chev { display: none; }
+.nav-toggle span { transition: transform .25s, opacity .2s; }
+@media (max-width: 980px) {
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: flex; align-items: stretch; max-height: calc(100vh - 76px); overflow-y: auto; border-radius: 0 0 14px 14px;
+    visibility: hidden; opacity: 0; transform: translateY(-10px); pointer-events: none; transition: opacity .25s, transform .25s, visibility .25s; }
+  .nav-links.open { visibility: visible; opacity: 1; transform: none; pointer-events: auto; }
+  .nav-links > a, .nav-item > a { display: flex; align-items: center; justify-content: space-between; padding: 17px 24px; font-size: 1.05rem; border-top: 1px solid var(--line); border-left: 3px solid transparent; }
+  .nav-links > a.active, .nav-item > a.active { color: var(--blue); border-left-color: var(--blue); }
+  .nav-links .chev { display: block; width: 9px; height: 9px; margin-right: 4px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .3s; }
+  .nav-item.open .chev { transform: translateY(2px) rotate(-135deg); }
+  .nav-item .sub { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .nav-item.open .sub { max-height: 240px; }
+  .nav-item .sub a { padding: 14px 24px 14px 44px; font-size: 1rem; border-left: 3px solid transparent; }
+  .nav-item .sub a.on { color: var(--blue); background: #eaf0fc; border-left-color: var(--blue); }
+}
+@media (max-width: 980px) and (prefers-reduced-motion: reduce) {
+  .nav-links, .nav-item .sub, .nav-links .chev, .nav-toggle span { transition: none; }
 }
