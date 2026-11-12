@@ -377,9 +377,7 @@ body[data-page="news"] .news-list.full .news-item { padding-left: 4px; padding-r
 /* ---------- 하단 (새 디자인) ---------- */
 .footer { padding: 0; color: #9fb0cf; background:
   radial-gradient(circle at 88% 30%, rgba(47,211,255,.14), transparent 42%),
-  radial-gradient(rgba(47,211,255,.16) 1px, transparent 1.4px),
-  linear-gradient(160deg, #0b1838 0%, #050d1f 100%);
-  background-size: auto, 22px 22px, auto; }
+  linear-gradient(160deg, #0b1838 0%, #050d1f 100%); }   /* 모눈 점 무늬는 뺐습니다 */
 .footer-cta { background: linear-gradient(100deg, rgba(47,211,255,.16), rgba(28,79,195,.28)); border-top: 3px solid var(--cyan); border-bottom: 1px solid rgba(255,255,255,.1); }
 .footer-cta .eyebrow { color: var(--cyan) !important; }
 .footer-bottom .wrap { padding-right: 96px; }
@@ -638,4 +636,15 @@ body[data-page="contact"] .footer-cta { display: none; }
   .alum-ci[src*="lg-chem"] { width: 104px; }
   .alum-ci[src*="sk-on"] { max-height: 44px; }
   .alum-ci[src*="lotte-em"] { max-height: 40px; }
+}
+/* ---------- 하단: PC 에서는 상단 메뉴와 같은 폭으로 넓게 ----------
+   본문(1180px)보다 넓혀서 왼쪽 끝은 상단 로고, 오른쪽 끝은 Contact Us 버튼과 맞춥니다. 모바일(980px 이하)은 그대로입니다. */
+@media (min-width: 981px) {
+  .footer .wrap { max-width: 1720px; padding-left: clamp(16px, 4vw, 48px); padding-right: clamp(16px, 4vw, 48px); }
+  .footer-grid { grid-template-columns: max-content max-content minmax(340px, 460px); justify-content: space-between; gap: 36px; }   /* 칸을 내용 폭에 맞추고 남는 공간을 똑같이 나눠, 로고-Menu 와 Menu-Contact 사이 간격이 같게 */
+  .footer-bottom .wrap { padding-right: 110px; padding-top: 12px; padding-bottom: 12px; }   /* 오른쪽은 맨 위로 버튼 자리. 위아래 여백은 원래 22px */
+  .footer-grid { padding-top: 52px; padding-bottom: 28px; }   /* 위아래 여백을 줄임 (원래 64px / 52px) */
+}
+@media (min-width: 1280px) {
+  .footer-menu { grid-template-columns: repeat(2, max-content); grid-template-rows: repeat(4, auto); grid-auto-flow: column; column-gap: clamp(32px, 4vw, 72px); }   /* 넓은 화면에서 메뉴는 두 줄로, 위에서 아래 순서 */
 }

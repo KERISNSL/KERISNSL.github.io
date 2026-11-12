@@ -174,7 +174,6 @@
       <div class="footer-bottom">
         <div class="wrap">
           <p>Copyright © ${new Date().getFullYear()}. <b>KERI SNSL - Sulfur and Solid Lab</b>. All rights reserved.</p>
-          <span class="stripes" aria-hidden="true"><i></i><i></i><i></i></span>
         </div>
       </div>
     </footer>
